@@ -1,16 +1,28 @@
 # GK6X
 
-This tool allows you to set keys, macros, and lighting for GK6X keyboards (GK64, GK84, GK61, etc). This can be used as an alternative to the official software http://www.jikedingzhi.com/downloadlist?driverID=41latest
+This tool allows you to set keys, macros, and lighting for GK6X keyboards (GK64, GK84, GK61, etc). This can be used as an alternative to the [official software(http://www.jikedingzhi.com/downloadlist?driverID=41latest), which is not available on Mac & Linux.
 
 It runs on Windows, Mac, and Linux.
 
-## Usage
 
 _Note: This is a CLI program, but see below for GUI. It's advisable to use the official software if you're on Windows._
 
 _Note: On Linux you will need to run it as super user [(issue with hidraw?)](https://github.com/pixeltris/GK6X/issues/3). It can be compiled / ran with mono on Linux / Mac ([see #4](https://github.com/pixeltris/GK6X/issues/4)). On Windows you compile it with Visual Studio._
 
-When you open the program it will connect to your keyboard (there's no console output until it finds something to connect to).
+## Usage
+
+1. Plug your keyboard into your computer
+1. Open Terminal, or another CLI, and `cd` into the `GK6X/Build` folder of this project
+1. Run `sudo mono GK6X.exe` (`sudo` is required)
+1. You should see the following message (or something similar, depending on your keyboard model):
+    - You'll only see the output once your keyboard is connected. If you aren't seeing it, try troubleshooting the connection.
+
+```
+Connected to device 'GK64X-RGB' model:656801836 fw:v1.16
+```
+
+
+
 
 Once it has connected it will create a file `UserData/YOUR_MODEL_ID.txt`. This can be used to configure the keyboard. [See Sample.txt for examples of setting keys, macros, and lighting](https://github.com/pixeltris/GK6X/blob/master/Build/UserData/Sample.txt). Use the 'map' command to apply your changes to the keyboard, and 'unmap' to reset your keyboard to the default state (NOTE: There is no 'apply failed' message like there is on the official software, so it can fail silently!).
 
